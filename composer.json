@@ -1,0 +1,6 @@
+{
+    "name": "root/lgsnerdbot",
+    "require": {
+        "team-reflex/discord-php": "^3.2"
+    }
+}
