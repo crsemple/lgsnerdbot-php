@@ -7,14 +7,15 @@ ini_set('memory_limit', '-1');
 
 include 'vendor/autoload.php';
 
-//TODO pull access token out of a config file or some shit 
-$token = "MTk3MDA5Mjc5NTc0NzM2ODk2.ClLWsA.41I9KAArsvD6clbVv0H-KPygoTc";
+//Load configuration file
+$configs = parse_ini_file('config.ini', true);
+
 
 use Discord\Discord;
 use Discord\WebSockets\Event;
 use Discord\WebSockets\WebSocket;
 
-$discord = new Discord(['token' => $token]);
+$discord = new Discord(['token' => $configs['credentials']['oauthToken']]);
 
 $socket = new WebSocket($discord);
 
